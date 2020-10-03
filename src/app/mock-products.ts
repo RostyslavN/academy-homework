@@ -4,7 +4,7 @@ export const PRODUCTS: Product[] = [
   {
     name: 'Banana',
     price: 3,
-    expirationDate: new Date(2020, 9, 4),
+    expirationDate: new Date(2020, 9, 5),
     category: 'Fruits',
   },
   {
