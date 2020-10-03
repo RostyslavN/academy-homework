@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Price ($)</td>
+      <td>ExpirationDate</td>
+      <td>Category</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products" [ngClass]="getClass(product.expirationDate)">
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.expirationDate | date:'longDate' }}</td>
+      <td>{{ product.category }}</td>
+    </tr>
+  </tbody>
+</table>
