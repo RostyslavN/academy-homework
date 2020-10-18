@@ -1,0 +1,23 @@
+form {
+  position: relative;
+}
+span {
+  width: 20%;
+  display: inline-block;
+}
+label {
+  display: block;
+  margin-bottom: 15px;
+}
+input {
+  height: 30px;
+  width: 75%;
+}
+button {
+  margin: 0 10px;
+  padding: 5px;
+}
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+}

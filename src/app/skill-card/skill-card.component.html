@@ -1,0 +1,8 @@
+<div class="skill-card">
+  <h3>
+    <ng-content></ng-content>
+    {{ index + 1 }}. {{ skill.name }}
+    <i class="fas fa-caret-down" [class.open-arrow]="status" (click)="toogleCard()"></i>
+  </h3>
+  <p [class.block]="status">{{ skill.description }}</p>
+</div>

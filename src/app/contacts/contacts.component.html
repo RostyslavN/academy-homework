@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <div class="telephone">
+    <i class="fas fa-phone"></i>
+    <a href="tel: {{user.contacts.telephone}}">
+      {{ user.contacts.telephone }}
+    </a>
+    <i class="fas fa-pen" *ngIf="editMode" (click)="openModal('telephone-modal')"></i>
+    <app-modal id="telephone-modal">
+      <app-form editedKey="telephone" modalId="telephone-modal"></app-form>
+    </app-modal>
+  </div>
+  <div class="email">
+    <i class="fas fa-envelope"></i>
+    <a href="mailto: {{user.contacts.email}}">
+      {{ user.contacts.email }}
+    </a>
+    <i class="fas fa-pen" *ngIf="editMode" (click)="openModal('email-modal')"></i>
+    <app-modal id="email-modal">
+      <app-form editedKey="email" modalId="email-modal"></app-form>
+    </app-modal>
+  </div>
+  <div class="linkedin">
+    <i class="fab fa-linkedin-in"></i>
+    <a [href]="user.contacts.linkedin">{{ user.contacts.linkedin }}</a>
+    <i class="fas fa-pen" *ngIf="editMode" (click)="openModal('linkedin-modal')"></i>
+    <app-modal id="linkedin-modal">
+      <app-form editedKey="linkedin" modalId="linkedin-modal"></app-form>
+    </app-modal>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<h2>Soft & Technical skills</h2>
+<main>
+  <div class="soft-skills">
+    <div *ngFor="let skill of user.softSkills; index as index">
+      <app-skill-card [index]="index" [skill]="skill">
+        <i class="fas fa-pen" *ngIf="editMode" (click)="openModal('soft' + index + '-modal')"></i>
+        <app-modal id="soft{{index}}-modal">
+          <app-form [editedObject]="skill" modalId="soft{{index}}-modal"></app-form>
+        </app-modal>
+      </app-skill-card>
+    </div>
+  </div>
+
+  <div class="technical-skills">
+    <div *ngFor="let skill of user.techSkills; index as index">
+      <app-skill-card [index]="index" [skill]="skill">
+        <i class="fas fa-pen" *ngIf="editMode" (click)="openModal('tech' + index + '-modal')"></i>
+        <app-modal id="tech{{index}}-modal">
+          <app-form [editedObject]="skill" modalId="tech{{index}}-modal"></app-form>
+        </app-modal>
+      </app-skill-card>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,17 @@
+<h2>
+  Experience
+  <i class="fas fa-plus" (click)="openModal('project-form')"></i>
+  <app-modal id="project-form">
+    <app-form modalId="project-form"></app-form>
+  </app-modal>
+</h2>
+<main>
+  <div *ngFor="let project of user.experience; index as i">
+    <app-experience-card [project]="project">
+      <i class="fas fa-pen" *ngIf="editMode" (click)="openModal('project' + i + '-modal')"></i>
+      <app-modal id="project{{i}}-modal">
+        <app-form [editedObject]="project" modalId="project{{i}}-modal"></app-form>
+      </app-modal>
+    </app-experience-card>
+  </div>
+</main>

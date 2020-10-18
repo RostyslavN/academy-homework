@@ -1,0 +1,25 @@
+<div class="wrapper">
+  <div>
+    <img [src]="user.avatar" alt="avatar" title="avatar">
+    <div>
+      <i class="fas fa-pen" *ngIf="editMode" (click)="openModal('avatar-modal')"></i>
+      <app-modal id="avatar-modal">
+        <app-form editedKey="avatar" modalId="avatar-modal"></app-form>
+      </app-modal>
+    </div>
+    <p>Number of projects:
+      <span>{{ user.experience.length > 0 ? user.experience.length : 'none' }}</span>
+    </p>
+  </div>
+  <div>
+    <h1>
+      <i class="fas fa-pen" *ngIf="editMode" (click)="openModal('name-modal')"></i>
+      <app-modal id="name-modal">
+        <app-form editedKey="name" modalId="name-modal"></app-form>
+      </app-modal>  
+      {{ user.name }}
+    </h1>
+
+  </div>
+  <ng-content></ng-content>
+</div>

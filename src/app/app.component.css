@@ -1,0 +1,14 @@
+main {
+  display: flex;
+}
+main * {
+  flex-grow: 1;
+}
+app-skills {
+  margin-right: 50px;
+}
+i {
+  cursor: pointer;
+  color: blue;
+  font-size: 18px;
+}

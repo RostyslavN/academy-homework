@@ -1,0 +1,39 @@
+<h2>{{ (editedKey || editedObject) ? 'Edit': 'Add' }} Form</h2>
+
+<form #modalForm="ngForm" (ngSubmit)="onFormSubmit(modalForm)">
+
+  <label *ngIf="editedKey">
+    <span>{{ editedKey }}:</span>
+    <input type="text" [name]="editedKey"
+        [ngModel]="getEditedKeyValue().trim()">
+  </label>
+
+  <div *ngIf="editedObject">
+    <label>
+      <span>Name:</span>
+      <input type="text" name="name" [ngModel]="editedObject.name" required>
+    </label>
+
+    <label>
+      <span>Description:</span>
+      <input type="text" name="description" [ngModel]="editedObject.description" required>
+    </label>
+  </div>
+  
+  <div *ngIf="!editedKey && !editedObject">
+    <label>
+      <span>Project name:</span>
+      <input type="text" name="name" [(ngModel)]="name" required>
+    </label>
+    <label>
+      <span>Project description:</span>
+      <input type="text" name="description" [(ngModel)]="description" required>
+    </label>
+  </div>
+
+  <div class="buttons">
+    <button type="button" (click)="cancel()">Cancel</button>
+    <button type="button" (click)="deleteElement()" *ngIf="editedKey || editedObject">Delete</button>
+    <button type="submit">{{ (editedObject || editedKey) ? 'Save' : 'Add'}}</button>
+  </div>
+</form>

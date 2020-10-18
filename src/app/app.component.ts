@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'curriculum-vitae';
+  editMode: Boolean = false;
+
+  changeMode(): void {
+    this.editMode = !this.editMode;
+  }
 }

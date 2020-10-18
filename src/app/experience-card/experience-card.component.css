@@ -1,0 +1,13 @@
+div {
+  width: 450px;
+  border: 3px solid lightblue;
+  margin: 0 auto;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+h3 {
+  text-align: center;
+}
+p {
+  overflow-wrap: break-word;
+}

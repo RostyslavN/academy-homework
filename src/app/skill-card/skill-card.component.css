@@ -1,0 +1,28 @@
+h3 {
+  margin: 0;
+  background-color: lightblue;
+  padding: 15px 0;
+  padding-left: 25px;
+  position: relative;
+}
+h3 i {
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+}
+p {
+  margin-top: 0;
+  padding: 10px;
+  transition: height padding .5s;
+  background-color: lightgrey;
+  display: none;
+}
+.open-arrow {
+  transform: rotate(180deg);
+}
+.skill-card {
+  width: 325px;
+}
+.block {
+  display: block;
+}
