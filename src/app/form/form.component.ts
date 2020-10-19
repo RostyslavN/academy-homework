@@ -4,7 +4,6 @@ import { NgForm } from '@angular/forms';
 import { USER } from '../user';
 import { Card } from '../card-interface';
 import { ModalService } from '../modal/modal.service';
-import { close } from 'inspector';
 
 @Component({
   selector: 'app-form',

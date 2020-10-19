@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { runInThisContext } from 'vm';
 
 import { ModalService } from '../modal/modal.service';
 
