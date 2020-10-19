@@ -5,7 +5,7 @@
   <label *ngIf="editedKey">
     <span>{{ editedKey }}:</span>
     <input type="text" [name]="editedKey"
-        [ngModel]="getEditedKeyValue().trim()">
+        [ngModel]="getEditedKeyValue()">
   </label>
 
   <div *ngIf="editedObject">

@@ -51,10 +51,10 @@ export class FormComponent implements OnInit {
   cancel(): void {
     if (this.editedObject) {
         this.editedObject.name = this.editedObject.name + ' ';
-        this.editedObject.description = this.editedObject.description;
+        this.editedObject.description = this.editedObject.description + ' ';
     } else {
-      if (USER[this.editedKey]) USER[this.editedKey] =  USER[this.editedKey] + ' ';
-      else USER.contacts[this.editedKey] =  USER.contacts[this.editedKey] + ' ';
+      if (USER[this.editedKey]) USER[this.editedKey] = (USER[this.editedKey] + ' ');
+      else USER.contacts[this.editedKey] = USER.contacts[this.editedKey] + ' ';
     }
     this.closeModal(this.modalId);
   }
@@ -80,6 +80,7 @@ export class FormComponent implements OnInit {
         }
       }
     }
+    this.closeModal(this.modalId);
   }
 
 }
