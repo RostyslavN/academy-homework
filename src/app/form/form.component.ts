@@ -22,7 +22,7 @@ export class FormComponent implements OnInit {
   }
 
   onFormSubmit(form: NgForm): void {
-    if (!confirm('Save changes?')) {
+    if ((this.editedKey || this.editedObject)? !confirm('Save changes?') : !confirm('Add new project?')) {
       this.closeModal(this.modalId);
     } else {
       if (Object.values(form.value).length > 1) {
