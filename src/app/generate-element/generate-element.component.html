@@ -1,0 +1,19 @@
+<div class="jumbotron">
+  <h1>Choose what to add</h1>
+  <form>
+    <label>
+      <input type="radio" name="generating-element" [(ngModel)]="generatingElement" value="table">
+      <span>Table</span>
+    </label>
+    <label>
+      <input type="radio" name="generating-element" [(ngModel)]="generatingElement" value="list">
+      <span>List</span>
+    </label>
+  </form>
+  <app-generate-table *ngIf="generatingElement === 'table'">
+    <input type="button" class="btn btn-dark cancel-btn" value="Cancel" (click)="cancelGenerating()">
+  </app-generate-table>
+  <app-generate-list *ngIf="generatingElement === 'list'">
+    <input type="button" class="btn btn-dark cancel-btn" value="Cancel" (click)="cancelGenerating()">
+  </app-generate-list>
+</div>

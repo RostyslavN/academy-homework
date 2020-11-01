@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+.jumbotron {
+  margin-bottom: 10px;
+  padding: 30px;
+}
+[type="radio"],
+[type="checkbox"] {
+  margin-right: 5px;
+}

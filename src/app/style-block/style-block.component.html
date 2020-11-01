@@ -1,0 +1,57 @@
+<div class="wrapper">
+  <form>
+    <div class="form-group">
+      <h6>Text size</h6>
+      <label>
+        <input type="radio" name="size" [(ngModel)]="data.styles['font-size']" value="12px">
+        <span>12px</span>
+      </label>
+      <label>
+        <input type="radio" name="size" [(ngModel)]="data.styles['font-size']" value="14px">
+        <span>14px</span>
+      </label>
+      <label>
+        <input type="radio" name="size" [(ngModel)]="data.styles['font-size']" value="16px">
+        <span>16px</span>
+      </label>
+      <label>
+        <input type="radio" name="size" [(ngModel)]="data.styles['font-size']" value="18px">
+        <span>18px</span>
+      </label>
+      <label>
+        <input type="radio" name="size" [(ngModel)]="data.styles['font-size']" value="20px">
+        <span>20px</span>
+      </label>
+    </div>
+    <div class="form-group">
+      <h6>Font Family</h6>
+      <select class="form-control" name="font-family" [(ngModel)]="data.styles['font-family']">
+        <option>Arial</option>
+        <option>Tahoma</option>
+        <option>Verdana</option>
+        <option>Times New Roman</option>
+        <option>Georgia</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <input type="button" value="Text color" class="btn btn-secondary mr-2 pick-btn" (click)="pickTextColor()">
+      <input type="button" value="Background color"class="btn btn-secondary pick-btn" (click)="pickBgColor()">
+    </div>
+    <div class="form-group">
+      <label>
+        <input name="bold-text" type="checkbox" [(ngModel)]="data.classes['bold-text']">
+        <span>Bold text</span>
+      </label>
+      <label>
+        <input name="italic-text" type="checkbox" [(ngModel)]="data.classes['italic-text']">
+        <span>Italic text</span>
+      </label>
+    </div>
+  </form>
+  <app-color-picker
+    *ngIf="isColorPickerOpen || isBgColorPickerOpen"
+    class="color-picker"
+    [editedStyle]="isColorPickerOpen ? 'color' : 'background-color'"
+    (close)="closePicker()"
+  ></app-color-picker>
+</div>

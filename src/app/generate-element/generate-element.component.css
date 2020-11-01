@@ -1,0 +1,14 @@
+label {
+  margin-right: 15px;
+}
+.cancel-btn {
+  margin-left: 15px;
+}
+.input-row {
+  display: flex;
+  align-items: center;
+}
+.input-row span {
+  width: 170px;
+  flex-shrink: 0;
+}

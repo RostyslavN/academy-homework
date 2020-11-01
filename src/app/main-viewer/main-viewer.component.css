@@ -1,0 +1,13 @@
+.bold-text {
+  font-weight: bold;
+}
+.italic-text {
+  font-style: italic;
+}
+.layout {
+  overflow: auto;
+  height: 250px;
+}
+table {
+  border-collapse: collapse;
+}

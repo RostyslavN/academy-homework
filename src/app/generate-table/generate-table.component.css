@@ -1,0 +1,14 @@
+
+.border-width-wrapper ~ label {
+  margin-left: 10px;
+}
+.border-width-wrapper ~ label span {
+  width: 120px;
+}
+.form-group .form-control {
+  min-width: 100px;
+}
+.input-group {
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}

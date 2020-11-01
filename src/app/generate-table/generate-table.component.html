@@ -1,0 +1,55 @@
+<form #generateTableForm="ngForm" ngNativeValidate (ngSubmit)="generateTable(generateTableForm)">
+  <div class="form-group">
+    <label class="input-row">
+      <span>Count of rows:</span>
+      <input type="number" class="form-control" name="rows" min="1" ngModel required>
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="input-row">
+      <span>Count of cells:</span>
+      <input type="number" class="form-control" name="cells" min="1" max="20" ngModel required>
+    </label>
+  </div>
+  <h3>Table styles:</h3>
+  <div class="form-group">
+    <label class="input-row">
+      <span>Width of cell(px):</span>
+      <input type="number" class="form-control" min="5" name="cell-width" ngModel required>
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="input-row">
+      <span>Height of cell(px):</span>
+      <input type="number" class="form-control" min="5" name="cell-height" ngModel required>
+    </label>
+  </div>
+  <div class="input-group">
+    <label class="input-row border-width-wrapper">
+      <span>Border width(px):</span>
+      <input type="number" class="form-control short-input" name="border-width" max="15" ngModel required>
+    </label>
+    <label class="input-row">
+      <span>Border type:</span>
+      <select name="border-type" class="form-control short-input" ngModel required>
+        <option>solid</option>
+        <option>dashed</option>
+        <option>dotted</option>
+        <option>double</option>
+        <option>hidden</option>
+      </select>
+    </label>
+    <label class="input-row">
+      <span>Border color:</span>
+      <select name="border-color" class="form-control short-input" ngModel required>
+        <option value="#111111">black</option>
+        <option value="#0074D9">blue</option>
+        <option value="#FF4136">red</option>
+        <option value="#2ECC40">green</option>
+        <option value="#FF851B">orange</option>
+      </select>
+    </label>
+  </div>
+  <input type="submit" value="Create table" class="btn btn-success">
+  <ng-content></ng-content>
+</form>
