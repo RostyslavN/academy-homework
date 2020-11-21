@@ -18,4 +18,7 @@ export class ButtonsComponent {
     this.mode['style-mode'] = !this.mode['style-mode'];
     this.mode['edit-mode'] = false;
   }
+  blockEditor(): void {
+    this.mode.blocked = true;
+  }
 }

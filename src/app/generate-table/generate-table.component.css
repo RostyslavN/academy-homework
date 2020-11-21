@@ -1,14 +1,46 @@
-
-.border-width-wrapper ~ label {
-  margin-left: 10px;
+legend,
+legend span {
+  font-size: 14px;
 }
-.border-width-wrapper ~ label span {
-  width: 120px;
+fieldset label {
+  margin: 0 20px;
+  position: relative;
 }
-.form-group .form-control {
-  min-width: 100px;
+input,
+select {
+  width: 125px;
+  margin-left: 5px;
 }
-.input-group {
-  justify-content: space-between;
-  flex-wrap: nowrap;
+.ng-invalid.ng-dirty {
+  border-color: tomato;
+}
+.ng-valid {
+  border-color: lightgreen;
+}
+.warning-message {
+  background-color: grey;
+  width: 150px;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  position: absolute;
+  top: -60px;
+  right: -20px;
+  border-radius: 5px;
+}
+.warning-message::before {
+  content: '▼';
+  display: inline-block;
+  color: grey;
+  position: absolute;
+  top: 43px;
+  left: 10px;
+}
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+  height: 25px;
+}
+.btn {
+  align-self: flex-start;
 }

@@ -1,19 +1,19 @@
 <div class="jumbotron">
-  <h1>Choose what to add</h1>
-  <form>
-    <label>
-      <input type="radio" name="generating-element" [(ngModel)]="generatingElement" value="table">
-      <span>Table</span>
-    </label>
-    <label>
-      <input type="radio" name="generating-element" [(ngModel)]="generatingElement" value="list">
-      <span>List</span>
-    </label>
-  </form>
-  <app-generate-table *ngIf="generatingElement === 'table'">
-    <input type="button" class="btn btn-dark cancel-btn" value="Cancel" (click)="cancelGenerating()">
-  </app-generate-table>
-  <app-generate-list *ngIf="generatingElement === 'list'">
-    <input type="button" class="btn btn-dark cancel-btn" value="Cancel" (click)="cancelGenerating()">
-  </app-generate-list>
+  <h2 class="title">Що додамо?</h2>
+  <div class="wrapper">
+    <form class="choose-element-form">
+      <label class="table-lable" [class.active]="tableRadio.checked">
+        <input type="radio" #tableRadio name="generating-element" [(ngModel)]="generatingElement" value="table">
+        <span>Таблиця</span>
+      </label>
+      <label class="list-lable" [class.active]="listRadio.checked">
+        <input type="radio" #listRadio name="generating-element" [(ngModel)]="generatingElement" value="list">
+        <span>Список</span>
+      </label>
+    </form>
+    <app-generate-table #generateTable *ngIf="generatingElement === 'table'"></app-generate-table>
+    <app-generate-list #generateList *ngIf="generatingElement === 'list'"></app-generate-list>
+  </div>
+  <app-example-block
+    (showExample)="generatingElement === 'table' ? tableGeneratingComponent.generateTable(true) : listGeneratingComponent.generateList(true)"></app-example-block>
 </div>

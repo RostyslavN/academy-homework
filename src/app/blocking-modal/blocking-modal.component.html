@@ -1,0 +1,21 @@
+<div class="wrapper vh-centering">
+  <div class="modal-content vh-centering">
+    <h2>Програму заблоковано. Введіть пароль</h2>
+    <form
+      #passwordForm="ngForm"
+      (ngSubmit)="unlockEditor(passwordForm)"
+      class="vh-centering">
+      <input
+        type="password"
+        name="password"
+        required
+        pattern="^12345$"
+        placeholder="Пароль..."
+        #password="ngModel"
+        ngModel>
+
+      <p *ngIf="passwordForm.submitted && !password.valid" class="password-error">Пароль не вірний</p>
+      <input type="submit" value="Розблокувати" class="btn btn-block">
+    </form>
+  </div>
+</div>

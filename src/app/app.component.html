@@ -1,9 +1,9 @@
 <div class="container">
-  <div class="main-editor" *ngIf="data.mode['main-editor-open']">
+  <div class="main-editor">
     <app-main-viewer></app-main-viewer>
     <app-buttons></app-buttons>
-    <app-editing-block></app-editing-block>
+    <app-customization-block></app-customization-block>
+    <app-generate-element *ngIf="mode['generate-element-open']">
+    </app-generate-element>
   </div>
-  <app-generate-element *ngIf="data.mode['generate-element-open']">
-  </app-generate-element>
 </div>

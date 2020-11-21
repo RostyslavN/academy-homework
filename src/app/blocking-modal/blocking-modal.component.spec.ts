@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditingBlockComponent } from './editing-block.component';
+import { BlockingModalComponent } from './blocking-modal.component';
 
-describe('EditingBlockComponent', () => {
-  let component: EditingBlockComponent;
-  let fixture: ComponentFixture<EditingBlockComponent>;
+describe('BlockingModalComponent', () => {
+  let component: BlockingModalComponent;
+  let fixture: ComponentFixture<BlockingModalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditingBlockComponent ]
+      declarations: [ BlockingModalComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EditingBlockComponent);
+    fixture = TestBed.createComponent(BlockingModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

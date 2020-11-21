@@ -1,21 +1,51 @@
-<form #generateListForm="ngForm" ngNativeValidate (ngSubmit)="generateList(generateListForm)">
-  <div class="form-group">
-    <label class="input-row">
-      <span>Count of list items:</span>
-      <input type="number" min="1" class="form-control" name="list-items" ngModel required>
+<form #generateListForm="ngForm" ngNativeValidate (ngSubmit)="generateList()" (input)="checkFormValidity()">
+
+  <fieldset>
+    <legend>Тип списку</legend>
+
+    <label>
+      <input type="radio" name="list-type" [(ngModel)]="listType" value="ordered" required>
+      <span>Нумерований</span>
     </label>
-  </div>
-  <div class="form-group">
-    <label class="input-row">
-      <span>Mark type:</span>
-      <select name="mark-type" class="form-control" ngModel required>
-        <option>disc</option>
-        <option>circle</option>
-        <option>square</option>
-        <option>decimal</option>
+    <label>
+      <input type="radio" name="list-type" [(ngModel)]="listType" value="unordered" required>
+      <span>Маркований</span>
+    </label>
+  </fieldset>
+
+  <fieldset *ngIf="listType === 'ordered' || listType === 'unordered'">
+    <legend>Параметри списку</legend>
+
+    <label>
+      <span>Кількість елементів</span>
+      <input type="number" [min]='1' [max]='99' name="list-items" ngModel #listItems="ngModel" required>
+      <div class="warning-message" *ngIf="listItems.invalid && listItems.dirty">
+        Введіть число в діапазоні 1..99
+      </div>
+    </label>
+
+    <label *ngIf="listType === 'ordered'">
+      <span>Тип маркування</span>
+      <select name="mark-type" ngModel required>
+        <option value="decimal">Арабські числа</option>
+        <option value="upper-roman">Римські числа</option>
+        <option value="upper-latin">Латинські літери (верхній регістр)</option>
+        <option value="low-latin">Латинські літери (нижній регістр)</option>
       </select>
     </label>
+
+    <label *ngIf="listType === 'unordered'">
+      <span>Тип маркування</span>
+      <select name="mark-type" ngModel required>
+        <option value="disc">Круг</option>
+        <option value="circle">Коло</option>
+        <option value="square">Квадрат</option>
+      </select>
+    </label>
+  </fieldset>
+
+
+  <div class="btn-wrapper">
+    <input type="submit" value="Додати" class="btn" *ngIf="generateListForm.valid">
   </div>
-  <input type="submit" value="Create list" class="btn btn-success">
-  <ng-content></ng-content>
 </form>

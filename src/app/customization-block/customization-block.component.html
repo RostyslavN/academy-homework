@@ -1,0 +1,4 @@
+<div class="jumbotron" *ngIf="mode['edit-mode'] || mode['style-mode']">
+  <app-edit-block *ngIf="mode['edit-mode']"></app-edit-block>
+  <app-style-block *ngIf="mode['style-mode']"></app-style-block>
+</div>

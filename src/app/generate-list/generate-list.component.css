@@ -1,0 +1,45 @@
+legend,
+legend span {
+  font-size: 14px;
+}
+fieldset label {
+  margin: 0 20px;
+  position: relative;
+}
+input:not([type="radio"]),
+select {
+  width: 125px;
+  margin-left: 5px;
+}
+.ng-invalid.ng-dirty {
+  border-color: tomato;
+}
+.ng-valid {
+  border-color: lightgreen;
+}
+.warning-message {
+  background-color: grey;
+  width: 150px;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  position: absolute;
+  top: -60px;
+  right: -20px;
+}
+.warning-message::before {
+  content: '▼';
+  display: inline-block;
+  color: grey;
+  position: absolute;
+  top: 43px;
+  left: 10px;
+}
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+  height: 25px;
+}
+.btn {
+  align-self: flex-start;
+}

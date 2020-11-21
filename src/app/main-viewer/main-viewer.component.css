@@ -4,10 +4,16 @@
 .italic-text {
   font-style: italic;
 }
+.underlined-text {
+  text-decoration: underline;
+}
+.jumbotron {
+  border: 15px solid #2b3136;
+}
 .layout {
   overflow: auto;
   height: 250px;
-}
-table {
-  border-collapse: collapse;
+  border-radius: 5px;
+  line-height: 23px;
+  padding: 10px 5px;
 }

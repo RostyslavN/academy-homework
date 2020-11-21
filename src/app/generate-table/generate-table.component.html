@@ -1,55 +1,125 @@
-<form #generateTableForm="ngForm" ngNativeValidate (ngSubmit)="generateTable(generateTableForm)">
-  <div class="form-group">
-    <label class="input-row">
-      <span>Count of rows:</span>
-      <input type="number" class="form-control" name="rows" min="1" ngModel required>
+<form
+  #generateTableForm="ngForm"
+  ngNativeValidate
+  (ngSubmit)="generateTable()"
+  (input)="checkFormValidity()">
+  <fieldset>
+    <legend>Ширина і висота комірки таблиці</legend>
+
+    <label>
+      <span>Ширина</span>
+      <input
+        type="number"
+        [min]="1"
+        [max]="99"
+        name="cell-width"
+        #cellWidth="ngModel"
+        ngModel
+        required>
+        <div
+          class="warning-message"
+          *ngIf="cellWidth.invalid && cellWidth.dirty">
+            Введіть число в діапазоні 1..99
+        </div>
     </label>
-  </div>
-  <div class="form-group">
-    <label class="input-row">
-      <span>Count of cells:</span>
-      <input type="number" class="form-control" name="cells" min="1" max="20" ngModel required>
+
+    <label>
+      <span>Висота</span>
+      <input
+        type="number"
+        min="1"
+        max="99"
+        name="cell-height"
+        #cellHeight="ngModel"
+        ngModel
+        required>
+        <div
+          class="warning-message"
+          *ngIf="cellHeight.invalid && cellHeight.dirty">
+            Введіть число в діапазоні 1..99
+        </div>
     </label>
-  </div>
-  <h3>Table styles:</h3>
-  <div class="form-group">
-    <label class="input-row">
-      <span>Width of cell(px):</span>
-      <input type="number" class="form-control" min="5" name="cell-width" ngModel required>
+  </fieldset>
+
+  <fieldset>
+    <legend>Товщина, колір, тип лінії таблиці</legend>
+
+    <label>
+      <span>Товщина</span>
+      <input
+        type="number"
+        name="border-width"
+        min="1"
+        max="99"
+        ngModel
+        required
+        #borderWidth="ngModel">
+        <div
+          class="warning-message"
+          *ngIf="borderWidth.invalid && borderWidth.dirty">
+            Введіть число в діапазоні 1..99
+        </div>
     </label>
-  </div>
-  <div class="form-group">
-    <label class="input-row">
-      <span>Height of cell(px):</span>
-      <input type="number" class="form-control" min="5" name="cell-height" ngModel required>
-    </label>
-  </div>
-  <div class="input-group">
-    <label class="input-row border-width-wrapper">
-      <span>Border width(px):</span>
-      <input type="number" class="form-control short-input" name="border-width" max="15" ngModel required>
-    </label>
-    <label class="input-row">
-      <span>Border type:</span>
-      <select name="border-type" class="form-control short-input" ngModel required>
-        <option>solid</option>
-        <option>dashed</option>
-        <option>dotted</option>
-        <option>double</option>
-        <option>hidden</option>
+    <label>
+      <span>Тип лінії</span>
+      <select name="border-type" ngModel required>
+        <option value="solid">Суцільна</option>
+        <option value="dashed">Пунктирна</option>
+        <option value="dotted">Точкова</option>
+        <option value="double">Подвійна</option>
       </select>
     </label>
-    <label class="input-row">
-      <span>Border color:</span>
-      <select name="border-color" class="form-control short-input" ngModel required>
-        <option value="#111111">black</option>
-        <option value="#0074D9">blue</option>
-        <option value="#FF4136">red</option>
-        <option value="#2ECC40">green</option>
-        <option value="#FF851B">orange</option>
-      </select>
+    <label>
+      <span>Колір</span>
+      <input type="color" name="border-color" ngModel required>
     </label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Кількість рядків і стовпців</legend>
+
+    <label>
+      <span>Кількість стовпців</span>
+      <input
+        type="number"
+        class="form-control"
+        name="cells"
+        #cells="ngModel"
+        min="1"
+        max="99"
+        ngModel
+        required>
+        <div
+          class="warning-message"
+          *ngIf="cells.invalid && cells.dirty">
+            Введіть число в діапазоні 1..99
+        </div>
+    </label>
+
+    <label>
+      <span>Кількість рядків</span>
+      <input
+        type="number"
+        class="form-control"
+        name="rows"
+        #rows="ngModel"
+        min="1"
+        max="99"
+        ngModel
+        required>
+        <div
+          class="warning-message"
+          *ngIf="rows.invalid && rows.dirty">
+            Введіть число в діапазоні 1..99
+        </div>
+    </label>
+  </fieldset>
+
+  <div class="btn-wrapper">
+    <input
+      type="submit"
+      value="Додати"
+      class="btn"
+      *ngIf="generateTableForm.valid">
   </div>
-  <input type="submit" value="Create table" class="btn btn-success">
-  <ng-content></ng-content>
 </form>

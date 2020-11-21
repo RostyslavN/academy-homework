@@ -5,28 +5,36 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { MainViewerComponent } from './main-viewer/main-viewer.component';
 import { ButtonsComponent } from './buttons/buttons.component';
-import { EditingBlockComponent } from './editing-block/editing-block.component';
+import { CustomizationBlockComponent } from './customization-block/customization-block.component';
 import { EditBlockComponent } from './edit-block/edit-block.component';
 import { StyleBlockComponent } from './style-block/style-block.component';
-import { ColorPickerComponent } from './color-picker/color-picker.component';
 import { GenerateElementComponent } from './generate-element/generate-element.component';
 import { GenerateTableComponent } from './generate-table/generate-table.component';
 import { GenerateListComponent } from './generate-list/generate-list.component';
 import { SanitizeHtmlPipe } from './shared/sanitize-html.pipe';
+import { BlockingModalComponent } from './blocking-modal/blocking-modal.component';
+import { HotkeysComponent } from './hotkeys/hotkeys.component';
+import { MinValidatorDirective } from './shared/min-validator.directive';
+import { MaxValidatorDirective } from './shared/max-validator.directive';
+import { ExampleBlockComponent } from './example-block/example-block.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainViewerComponent,
     ButtonsComponent,
-    EditingBlockComponent,
+    CustomizationBlockComponent,
     EditBlockComponent,
     StyleBlockComponent,
-    ColorPickerComponent,
     GenerateElementComponent,
     GenerateTableComponent,
     GenerateListComponent,
-    SanitizeHtmlPipe
+    SanitizeHtmlPipe,
+    BlockingModalComponent,
+    HotkeysComponent,
+    MinValidatorDirective,
+    MaxValidatorDirective,
+    ExampleBlockComponent,
   ],
   imports: [
     BrowserModule,

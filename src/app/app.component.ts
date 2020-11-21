@@ -8,6 +8,6 @@ import { DATA } from './shared/data';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'CKEditor';
-  data = DATA;
+  title = 'CKEditor2.0';
+  mode = DATA.mode;
 }

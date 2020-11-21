@@ -7,8 +7,11 @@ select {
 .wrapper {
   position: relative;
 }
-.color-picker {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+[name="font-family"] {
+  width: 200px;
+  padding: 5px;
+  border-radius: 5px;
+}
+[type="color"] {
+  margin-left: 10px;
 }

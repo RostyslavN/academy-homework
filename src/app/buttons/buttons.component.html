@@ -1,4 +1,6 @@
-<div class="row">
-  <input type="button" value="Edit" class="btn btn-warning mr-2" (click)="openEditBlock()">
-  <input type="button" value="Style" class="btn btn-info" (click)="openStyleBlock()">
+<div class="row jumbotron">
+  <input type="button" value="Редагувати" class="btn btn-warning mr-2" (click)="openEditBlock()">
+  <input type="button" value="Стилізувати" class="btn btn-info" (click)="openStyleBlock()">
+  <input type="button" value="Блокувати" class="btn" (click)="blockEditor()">
 </div>
+<app-blocking-modal *ngIf="mode.blocked"></app-blocking-modal>

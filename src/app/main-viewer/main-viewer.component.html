@@ -1,3 +1,8 @@
-<div class="jumbotron" [ngStyle]="data.styles" [ngClass]="data.classes">
-  <div class="layout" [innerHTML]="data.layout | sanitizeHtml"></div>
+<div class="jumbotron" >
+  <div
+    class="layout"
+    [innerHTML]="data.layout | sanitizeHtml"
+    [ngStyle]="data.styles"
+    [ngClass]="data.classes">
+  </div>
 </div>

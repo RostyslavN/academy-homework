@@ -1,8 +1,37 @@
-.jumbotron {
-  margin-bottom: 10px;
-  padding: 30px;
+body {
+  background-color: #6b6f7c;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
-[type="radio"],
-[type="checkbox"] {
-  margin-right: 5px;
+.jumbotron {
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #2b3136;
+  box-sizing: border-box;
+}
+.btn {
+  color: whitesmoke;
+  padding: 12px 20px;
+  background-color: #5c4635;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #72543d;
+}
+fieldset {
+  border: 1.5px dashed grey;
+  border-radius: 5px;
+  color: #fff;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.style-name {
+  padding: 0 5px;
+}
+label {
+  cursor: pointer;
 }

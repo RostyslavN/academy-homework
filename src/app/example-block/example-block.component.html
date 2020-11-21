@@ -1,0 +1,24 @@
+<div class="wrapper">
+  <input
+    type="button"
+    value="Подивитись на приклад"
+    class="btn"
+    [disabled]="!data.mode['is-example-allow']"
+    (click)="emitShowExample()">
+  <div class="example-viewer" *ngIf="isViewerOpen">
+    <div class="viewer__top-line">
+      <input type="button" class="viewer__close-btn" (click)="toogleViewer()">
+    </div>
+    <div
+      class="viewer__content"
+      [innerHTML]="data.exampleLayout | sanitizeHtml">
+    </div>
+  </div>
+  <div class="closed-viewer hv-center" *ngIf="!isViewerOpen" (click)="toogleViewer()">
+    <div class="closed-viewer__content hv-center">
+      <img src="../../assets/images/show-example-icon.svg" title="Відкрити приклад">
+      <p>Відкрити приклад</p>
+    </div>
+  </div>
+  <div class="invisible-block"></div>
+</div>

@@ -1,5 +1,6 @@
 <form #editBlockForm="ngForm" (ngSubmit)="saveLayout(editBlockForm)">
-  <textarea name="layout" class="form-control" [ngModel]="data.layout + data.temporaryLayout"></textarea>
-  <input type="button" value="Add" class="btn btn-danger mr-2" (click)="openGenerateElementBlock()">
-  <input type="submit" value="Save" class="btn btn-success">
+  <app-hotkeys (pushHotkey)="addHotkeyValue($event)"></app-hotkeys>
+  <textarea #layout name="layout" [ngModel]="data.layout + data.temporaryLayout"></textarea>
+  <input type="submit" value="Зберегти" class="btn">
+  <input type="button" value="Додати" class="btn" (click)="openGenerateElementBlock()">
 </form>

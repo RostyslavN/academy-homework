@@ -1,0 +1,6 @@
+<input
+  type="button"
+  *ngFor="let key of keys"
+  [value]="key"
+  (click)="addTag($event.target.value)"
+  class="btn btn-hotkey">
